@@ -7,6 +7,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const indexRoutes = require('./routes/index');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/', indexRoutes);
 
 sequelize.sync()
     .then(() => console.log('Database connected!'))
